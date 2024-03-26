@@ -1,15 +1,9 @@
 package Principal;
 
-import Controladores.Metodos;
-import Modelos.Libro;
-
-import java.util.ArrayList;
-
+import Controladores.Menu;
 public class Main {
     public static void main(String[] args) {
-        Metodos metodos = new Metodos();
-
-        metodos.librosExistentes();
-        metodos.registrarLibro();
+        Menu menu = new Menu();
+        menu.menu();
     }
 }

@@ -15,8 +15,9 @@ public class Metodos {
         libro.add(new Libro("J.K. Rowling", "Harry Potter 1", 350));
         libro.add(new Libro("J.R.R. Tolkien", "El señor de los anillos 1", 350));
         libro.add(new Libro("Paulo Coelho", "El alquimista", 350));
+    }
 
-        System.out.println("Libros disponibles hasta el momento: " + "\n");
+    public void librosActuales(){
         for (Libro libroCreado : libro) {
             System.out.println(libroCreado);
         }

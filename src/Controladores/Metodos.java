@@ -35,7 +35,10 @@ public class Metodos {
 
     libro.add(new Libro(titulo, autor, copias));
 
-    System.out.println("Se ha guardado con exito!! " + "\n" + "Así quedó la biblioteca ahora: " + "\n");
+    System.out.println("""
+            Se ha guardado con exito!!\s
+            Así quedó la biblioteca ahora:\s
+            """);
         for (Libro libroCreado : libro) {
             System.out.println(libroCreado);
         }

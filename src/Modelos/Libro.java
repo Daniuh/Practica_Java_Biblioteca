@@ -1,14 +1,12 @@
 package Modelos;
 
-import java.util.ArrayList;
-
 public class Libro {
 
     static Integer contador = 0;
-    private Integer id = 0;
-    private String autor = "";
-    private String titulo = "";
-    private Integer ejemplaresDisponibles = 0;
+    private Integer id;
+    private String autor;
+    private String titulo;
+    private Integer ejemplaresDisponibles;
 
     public Libro(String autor, String titulo, Integer ejemplaresDisponibles) {
         this.id = ++contador;
@@ -23,9 +21,6 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "id: " + id + "\n" +
-                " Autor: " + autor + "\n" +
-                " Titulo: " + titulo + "\n" +
-                " Copias: " + ejemplaresDisponibles + "\n";
+        return STR."id: \{id}\n Autor: \{autor}\n Titulo: \{titulo}\n Copias: \{ejemplaresDisponibles}\n";
     }
 }

@@ -24,7 +24,7 @@ public class Menu {
                 5. Me equivoqué, quiero salir""");
 
         while (!validacionRespuesta) {
-            if (opcionUsuario.hasNextBigInteger()) {
+            if (opcionUsuario.hasNextInt()) {
                 verificarRespuesta = opcionUsuario.nextInt();
                 if (verificarRespuesta > 0 && verificarRespuesta < 6) {
                     setRespuesta(verificarRespuesta);

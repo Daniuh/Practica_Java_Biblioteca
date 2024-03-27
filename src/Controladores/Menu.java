@@ -7,13 +7,14 @@ public class Menu {
 
     Metodos metodos = new Metodos();
     private Integer respuesta;
-    private Boolean validacionRespuesta = false;
 
     public Integer getRespuesta() {return respuesta;}
 
     public void setRespuesta(Integer respuesta) {this.respuesta = respuesta;}
 
     public void capturarRespuesta(){
+        boolean validacionRespuesta = false;
+
         System.out.println("""
                 Elija que opción desea hacer hoy en la biblioteca
                 1. Donar libro a la Biblioteca.
@@ -41,8 +42,6 @@ public class Menu {
     }
 
     public void menu() {
-        int respuestaRepetir = 0;
-
         metodos.librosExistentes();
 
         System.out.println("Bienvenido a la biblioteca G&D" + "\n" + "Estos son los libros que tenemos disponibles actualmente:");
@@ -52,8 +51,6 @@ public class Menu {
             switch (getRespuesta()) {
                 case 1:
                     metodos.registrarLibro();
-                    validacionRespuesta = false;
-                    capturarRespuesta();
                 case 2:
                 case 3:
                 case 4:
@@ -61,4 +58,5 @@ public class Menu {
                     break;
             }
     }
+
 }

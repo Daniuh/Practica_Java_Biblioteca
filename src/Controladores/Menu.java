@@ -8,7 +8,6 @@ public class Menu {
     Metodos metodos = new Metodos();
     private Integer respuesta;
     private Boolean validacionRespuesta = false;
-    private Integer verificarRespuesta;
 
     public Integer getRespuesta() {return respuesta;}
 
@@ -25,15 +24,15 @@ public class Menu {
 
         while (!validacionRespuesta) {
             if (opcionUsuario.hasNextInt()) {
-                verificarRespuesta = opcionUsuario.nextInt();
-                if (verificarRespuesta > 0 && verificarRespuesta < 6) {
+                Integer verificarRespuesta = opcionUsuario.nextInt();
+                int validarNumero = verificarRespuesta;
+                if (validarNumero > 0 && validarNumero < 6) {
                     setRespuesta(verificarRespuesta);
+                    validacionRespuesta = true;
                 }else {
                     System.out.println("Error: Entrada invalida, por favor ingrese un numero que este dentro de la opción");
-                    opcionUsuario.next();
                 }
                 setRespuesta(verificarRespuesta);
-                validacionRespuesta = true;
             } else {
                 System.out.println("Error: Entrada invalida, por favor ingrese un numero y que este dentro de la opción");
                 opcionUsuario.next();
@@ -41,19 +40,25 @@ public class Menu {
         }
     }
 
-    public void menu(){
+    public void menu() {
+        int respuestaRepetir = 0;
+
         metodos.librosExistentes();
 
         System.out.println("Bienvenido a la biblioteca G&D" + "\n" + "Estos son los libros que tenemos disponibles actualmente:");
         metodos.librosActuales();
 
-        capturarRespuesta();
-        switch (getRespuesta()) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5: break;
-        }
+            capturarRespuesta();
+            switch (getRespuesta()) {
+                case 1:
+                    metodos.registrarLibro();
+                    validacionRespuesta = false;
+                    capturarRespuesta();
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    break;
+            }
     }
 }
